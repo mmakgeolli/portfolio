@@ -1,15 +1,19 @@
-/**{
-    background-color: rgb(255, 244, 223);
-}*/
-
+:root {
+  --velvet: #5c0d0d;
+  --grass: #b9C6ae;
+  --white: #fff;
+  --crimson: #c51b1b;
+  --shadow: #666;
+  --radius: 50px;
+}
 /*main header at top of page*/
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1%;
-    background-color: #5c0d0d;
-    color: #b9C6ae;
+    background-color: var(--velvet);
+    color: var(--grass);
 }
   
 /*size of "Anthony Hidajat's Resume Text*/
@@ -26,31 +30,35 @@ nav ul {
 
 /*More Display Settings for nav items*/
 nav a {
-    color: #b9C6ae;
+    color: var(--grass);
     font-weight: bold;
     text-decoration: none;
 }
 /*Changes text color when cursor is hovered at text*/
 nav a:hover {
-    color: #fff;
+    color: var(--white);
 }
 
+/*adds red background and moves text when it's clicked*/
 nav a:active {
-    background-color: #c51b1b;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px)
+    background-color: var(--crimson);
+    box-shadow: 0 5px var(--shadow);
+    transform: translateY(4px);
 }
 
+/*gives a border when item is tabbed to*/
 nav a:focus {
     outline: none;
-    border-color: #8ac4ff;
+    border-color: var(--crimson);
   }
 
 section {
     flex: 1 1 0;
     padding-right: 5%;
   }
-  
+
+
+/*format for main info section of page*/
 .info {
     border-bottom: 1px solid #d8a47f;
   }
@@ -61,16 +69,126 @@ h2 {
 .info p {
     margin: 2% 0;
     font-size: 120%;
+    text-align: justify;
   }
 
-.avatar img{
+
+/*aside {
+    flex: 1;
+    background-color: #b9c6ae;
+    padding: 20px;
+}*/
+
+
+.sidenav {
+  width: 130px;
+  position: fixed;
+  z-index: 1;
+  top: 300px;
+  right: 10px;
+  background: var(--velvet);
+  overflow-x: hidden;
+  padding: 8px 0;
+  border-radius: 20px;
+}
+
+.sidenav figcaption {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 13px;
+  color: var(--grass);
+  display: block;
+  text-align:justify;
+}
+
+/*aside h2 {
+  font-size: 150%;
+}*/
+
+.sidenav img {
     display:flex;
     position: relative;
     border-radius: 50%;
+    width: 100%;
 }
 
-@media screen and (max-width: 992px) {
-    .avatar {
-      width: 50%;
-    }
+/*main image orientation*/
+.container-main {
+  position: relative;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-main img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/*covers the image when being hovered on*/
+.container-main:hover .overlay-text {
+  opacity: 1;
+}
+
+/*secondary image orientations, need to separate class with main image as size and orientation
+are different*/
+.container {
+  position: relative;
+  width: 30%;
+  float: left;
+  width: 30%;
+  padding: 5px;
+}
+
+.container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  
+}
+
+/*text overlay above image*/
+.overlay-text {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: var(--grass);
+}
+
+/*text appears on image when hovered on*/
+.container:hover .overlay-text {
+  opacity: 1;
+}
+
+/*text display settings*/
+.text {
+  color: var(--velvet);
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
