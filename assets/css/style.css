@@ -1,3 +1,8 @@
+/**{
+    background-color: rgb(255, 244, 223);
+}*/
+
+/*main header at top of page*/
 header {
     display: flex;
     justify-content: space-between;
@@ -5,24 +10,67 @@ header {
     padding: 1%;
     background-color: #5c0d0d;
     color: #b9C6ae;
-  }
+}
   
-  h1 {
+/*size of "Anthony Hidajat's Resume Text*/
+h1 {
     font-size:200%;
-  }
+}
 
-  nav ul {
+/*Display Settings for navigation items at top of page*/
+nav ul {
     display: flex;
     justify-content: space-between;
     min-width: 300px;
-  }
+}
 
-  nav a {
+/*More Display Settings for nav items*/
+nav a {
     color: #b9C6ae;
     font-weight: bold;
     text-decoration: none;
+}
+/*Changes text color when cursor is hovered at text*/
+nav a:hover {
+    color: #fff;
+}
+
+nav a:active {
+    background-color: #c51b1b;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px)
+}
+
+nav a:focus {
+    outline: none;
+    border-color: #8ac4ff;
   }
 
-  nav a:hover {
-    color: #fff;
+section {
+    flex: 1 1 0;
+    padding-right: 5%;
   }
+  
+.info {
+    border-bottom: 1px solid #d8a47f;
+  }
+
+h2 {
+    font-size:200%;
+}
+.info p {
+    margin: 2% 0;
+    font-size: 120%;
+  }
+
+.avatar img{
+    display:flex;
+    position: relative;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 992px) {
+    .avatar {
+      width: 50%;
+    }
+}
