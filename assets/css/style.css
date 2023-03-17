@@ -1,84 +1,97 @@
+
 :root {
   --velvet: #5c0d0d;
-  --grass: #b9C6ae;
+  --grass: #b9c6ae;
   --white: #fff;
   --crimson: #c51b1b;
   --shadow: #666;
-  --radius: 50px;
+  --cream: #ece7dc;
 }
+
 /*main header at top of page*/
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1%;
-    background-color: var(--velvet);
-    color: var(--grass);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1%;
+  background-color: var(--velvet);
+  color: var(--grass);
 }
-  
+
 /*size of "Anthony Hidajat's Resume Text*/
 h1 {
-    font-size:200%;
+  font-size: 200%;
 }
 
 /*Display Settings for navigation items at top of page*/
 nav ul {
-    display: flex;
-    justify-content: space-between;
-    min-width: 300px;
+  display: flex;
+  justify-content: space-between;
+  min-width: 400px;
 }
 
 /*More Display Settings for nav items*/
 nav a {
-    color: var(--grass);
-    font-weight: bold;
-    text-decoration: none;
+  color: var(--grass);
+  font-weight: bold;
+  text-decoration: none;
 }
 /*Changes text color when cursor is hovered at text*/
 nav a:hover {
-    color: var(--white);
+  color: var(--white);
 }
 
 /*adds red background and moves text when it's clicked*/
 nav a:active {
-    background-color: var(--crimson);
-    box-shadow: 0 5px var(--shadow);
-    transform: translateY(4px);
+  background-color: var(--crimson);
+  box-shadow: 0 5px var(--shadow);
+  transform: translateY(4px);
 }
 
 /*gives a border when item is tabbed to*/
 nav a:focus {
-    outline: none;
-    border-color: var(--crimson);
-  }
+  outline: none;
+  border-color: var(--crimson);
+}
 
 section {
-    flex: 1 1 0;
-    padding-right: 5%;
-  }
-
+  flex: 1 1 0;
+  padding-right: 5%;
+}
 
 /*format for main info section of page*/
 .info {
-    border-bottom: 1px solid #d8a47f;
-  }
+  border-bottom: 1px solid #d8a47f;
+}
 
 h2 {
-    font-size:200%;
+  font-size: 200%;
 }
+h3 {
+  font-size: 400%;
+}
+
 .info p {
-    margin: 2% 0;
-    font-size: 120%;
-    text-align: justify;
-  }
+  margin: 2% 0;
+  font-size: 120%;
+  text-align: justify;
+}
 
+footer {
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  margin: 20px 0px;
+  padding: 20px 20px;
+  background-color: var(--velvet);
+  color: var(--grass);
+}
 
-/*aside {
-    flex: 1;
-    background-color: #b9c6ae;
-    padding: 20px;
-}*/
-
+.contactinfo h5 {
+  display: inline;
+}
 
 .sidenav {
   width: 130px;
@@ -94,46 +107,42 @@ h2 {
 
 .sidenav figcaption {
   padding: 6px 8px 6px 16px;
-  text-decoration: none;
   font-size: 13px;
   color: var(--grass);
   display: block;
-  text-align:justify;
+  text-align: justify;
 }
 
-/*aside h2 {
-  font-size: 150%;
-}*/
-
 .sidenav img {
-    display:flex;
-    position: relative;
-    border-radius: 50%;
-    width: 100%;
+  display: flex;
+  position: relative;
+  border-radius: 50%;
+  width: 100%;
 }
 
 /*main image orientation*/
-.container-main {
+#mainProject {
   position: relative;
   width: 50%;
   margin-left: auto;
   margin-right: auto;
 }
 
-.container-main img {
+#mainProject img {
   display: block;
   width: 100%;
   height: 100%;
 }
 
 /*covers the image when being hovered on*/
-.container-main:hover .overlay-text {
+#mainProject:hover .overlay-text {
   opacity: 1;
+  cursor: help;
 }
 
 /*secondary image orientations, need to separate class with main image as size and orientation
 are different*/
-.container {
+#genProject {
   position: relative;
   width: 30%;
   float: left;
@@ -141,11 +150,11 @@ are different*/
   padding: 5px;
 }
 
-.container img {
+#genProject img {
   display: block;
+  margin: 0;
   width: 100%;
   height: 100%;
-  
 }
 
 /*text overlay above image*/
@@ -158,16 +167,16 @@ are different*/
   height: 100%;
   width: 100%;
   opacity: 0;
-  transition: .5s ease;
+  transition: 0.5s ease;
   background-color: var(--grass);
 }
 
 /*text appears on image when hovered on*/
-.container:hover .overlay-text {
+#genProject:hover .overlay-text {
   opacity: 1;
+  cursor: help;
 }
 
-/*text display settings*/
 .text {
   color: var(--velvet);
   font-size: 20px;
@@ -181,14 +190,23 @@ are different*/
 }
 
 
+
 @media screen and (max-width: 500px) {
-  .container {
+  #mainProject {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  #genProject {
     width: 100%;
   }
 }
 
-
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
 }
