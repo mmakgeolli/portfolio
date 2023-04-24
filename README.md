@@ -17,6 +17,4 @@ For the first iteration of my portfolio, I mainly focused on generic details of 
 - The images of my projects, when clicked, brings the user to the project
 
 - The pages resize according to the window size, in order to be viewable even on mobile devices
-
-## Screenshot of page
-
+  ![sda](https://user-images.githubusercontent.com/126424356/225799385-28932d4b-200c-4406-94d4-54bf87076564.png)
